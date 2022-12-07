@@ -3,6 +3,8 @@ package com.example.demo.controllers;
 import java.time.LocalDateTime;
 import java.util.List;
 
+import javax.validation.Valid;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -32,7 +34,7 @@ public class UserController {
 
 	// POST: Create user
 	@PostMapping(path = "/")
-	public ResponseEntity<UserDto> createUser(@RequestBody UserDto user) {
+	public ResponseEntity<UserDto> createUser(@Valid @RequestBody UserDto user) {
 		UserDto createdUser = service.createUser(user);
 		return new ResponseEntity<>(createdUser, HttpStatus.CREATED);
 	}
