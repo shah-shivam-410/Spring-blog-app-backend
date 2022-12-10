@@ -2,9 +2,6 @@ package com.example.demo.payloads;
 
 import java.time.LocalDateTime;
 
-import lombok.Data;
-import lombok.NoArgsConstructor;
-
 public class APIResponses {
 
 	private String message;
