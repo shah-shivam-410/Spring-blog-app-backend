@@ -7,7 +7,7 @@ import com.example.demo.payloads.PostDto;
 
 public interface PostService {
 
-	PostDto createPost(PostDto p);
+	PostDto createPost(PostDto p, Integer userId, Integer categoryId);
 	PostDto updatePost(PostDto p, Integer postId);
 	List<Post> getAllPost();
 	Post getPostById(Integer postId);
