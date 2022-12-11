@@ -30,12 +30,12 @@ jobs:
         cache: maven
         
     - name: Maven clean
-      run: ./mvnw clean
+      run: mvn clean
       
     - name: Maven install
-      run: ./mvnw install
+      run: mvn install
       
     - name: Maven test
-      run: ./mvnw test
+      run: mvn test
 
    
