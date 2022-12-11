@@ -29,13 +29,8 @@ jobs:
         distribution: 'temurin'
         cache: maven
         
-    - name: Maven clean
-      run: mvn clean
+    - name: Maven package
+      run: mvn validate compile package
       
-    - name: Maven install
-      run: mvn install
-      
-    - name: Maven test
-      run: mvn test
 
    
