@@ -18,6 +18,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
+import com.example.demo.config.AppConstants;
 import com.example.demo.payloads.APIResponses;
 import com.example.demo.payloads.PostDto;
 import com.example.demo.payloads.PostResponse;
@@ -57,9 +58,11 @@ public class PostController {
 	}
 	
 	@GetMapping(path = "/")
-	public ResponseEntity<PostResponse> getAllPosts(@RequestParam(value = "pageNumber", defaultValue = "0", required = false) Integer pageNumber, 
-													 @RequestParam(value = "pageSize", defaultValue = "5", required = false) Integer pageSize) {
-		PostResponse posts = service.getAllPost(pageNumber, pageSize);
+	public ResponseEntity<PostResponse> getAllPosts(@RequestParam(value = "pageNumber", defaultValue = AppConstants.PAGE_NUMBER, required = false) Integer pageNumber, 
+													 @RequestParam(value = "pageSize", defaultValue = AppConstants.PAGE_SIZE, required = false) Integer pageSize,
+													 @RequestParam(value = "sortBy", defaultValue = AppConstants.SORT_BY, required = false) String sortBy,
+													 @RequestParam(value = "sortDir", defaultValue = AppConstants.SORT_DIR, required = false) String sortDir) {
+		PostResponse posts = service.getAllPost(pageNumber, pageSize, sortBy, sortDir);
 		return new ResponseEntity<>(posts, HttpStatus.OK);
 	}
 	
@@ -73,6 +76,12 @@ public class PostController {
 	public ResponseEntity<APIResponses> deletePost(@PathVariable Integer postId) {
 		service.deletePost(postId);
 		return new ResponseEntity<>(new APIResponses("Post deleted successfully", true, LocalDateTime.now()), HttpStatus.OK);
+	}
+	
+	@GetMapping(path = "/search/{keyword}")
+	public ResponseEntity<List<PostDto>> serchPostByTitle(@PathVariable String keyword) {
+		List<PostDto> posts = service.searchPosts(keyword);
+		return new ResponseEntity<>(posts, HttpStatus.OK);
 	}
 	
 }

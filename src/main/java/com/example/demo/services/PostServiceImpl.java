@@ -9,6 +9,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.autoconfigure.data.web.SpringDataWebProperties.Pageable;
 import org.springframework.data.domain.Page;
 import org.springframework.data.domain.PageRequest;
+import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
 import com.example.demo.entities.Category;
@@ -20,6 +21,7 @@ import com.example.demo.payloads.PostResponse;
 import com.example.demo.repositories.CategoryRepo;
 import com.example.demo.repositories.PostRepo;
 import com.example.demo.repositories.UserRepo;
+
 
 @Service
 public class PostServiceImpl implements PostService {
@@ -37,16 +39,14 @@ public class PostServiceImpl implements PostService {
 	private ModelMapper mapper;
 	
 	@Override
-	public PostDto createPost(PostDto p, Integer userId, Integer categoryId) {
-		
+	public PostDto createPost(PostDto p, Integer userId, Integer categoryId) {	
 		User user = userRepo.findById(userId).orElseThrow(() -> new ResourceNotFoundException("User", "Id", userId));
 		Category cat = categoryRepo.findById(categoryId).orElseThrow(() -> new ResourceNotFoundException("Category", "Id", categoryId));
 		Post post = mapper.map(p, Post.class);
 		post.setAddedDate(new Date());
 		post.setCategory(cat);
 		post.setUser(user);
-		repo.save(post);
-		
+		repo.save(post);		
 		return mapper.map(post, PostDto.class);
 	}
 
@@ -61,9 +61,10 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public PostResponse getAllPost(Integer pageNumber, Integer pageSize) {
+	public PostResponse getAllPost(Integer pageNumber, Integer pageSize, String sortBy, String sortDir) {
+		Sort sort = (sortDir.equalsIgnoreCase("asc")) ? Sort.by(sortBy).ascending() : Sort.by(sortBy).descending();
 		PostResponse resp = new PostResponse();
-		PageRequest p = PageRequest.of(pageNumber, pageSize);
+		PageRequest p = PageRequest.of(pageNumber, pageSize, sort);
 		Page<Post> pagePost = repo.findAll(p);
 		List<Post> posts = pagePost.getContent();
 		List<PostDto> allDtos = posts.stream().map(m -> mapper.map(m, PostDto.class)).collect(Collectors.toList());
@@ -98,14 +99,14 @@ public class PostServiceImpl implements PostService {
 	}
 
 	@Override
-	public List<PostDto> searchPosts(String keyword) {
-		// TODO Auto-generated method stub
-		return null;
-	}
-
-	@Override
 	public void deletePost(Integer postId) {
 		repo.deleteById(postId);
 	}
 
+	@Override
+	public List<PostDto> searchPosts(String keyword) {
+		List<Post> posts = repo.findByTitleContaining(keyword);
+		return posts.stream().map(m -> mapper.map(m, PostDto.class)).collect(Collectors.toList());
+	}
+	
 }
