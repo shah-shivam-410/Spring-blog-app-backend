@@ -1,5 +1,8 @@
 package com.example.demo.payloads;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
 
@@ -23,4 +26,6 @@ public class PostDto {
 	private CategoryDto category;
 
 	private UserDto user;
+	
+	private List<CommentDto> comments = new ArrayList<>();
 }
