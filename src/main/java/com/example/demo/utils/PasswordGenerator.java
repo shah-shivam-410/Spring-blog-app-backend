@@ -13,4 +13,6 @@ public class PasswordGenerator{
 
 	// password for user 2 : 12343S$#$
 	
+	//	aqwe@aoi.com
+	//	Abc@123
 }
