@@ -16,7 +16,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.example.demo.payloads.APIResponses;
 import com.example.demo.payloads.CommentDto;
-import com.example.demo.payloads.PostDto;
 import com.example.demo.services.CommentService;
 
 @RestController

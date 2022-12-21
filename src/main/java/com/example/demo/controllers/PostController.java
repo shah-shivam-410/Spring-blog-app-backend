@@ -24,8 +24,6 @@ import com.example.demo.payloads.PostDto;
 import com.example.demo.payloads.PostResponse;
 import com.example.demo.services.PostService;
 
-import lombok.Delegate;
-
 @RestController
 @RequestMapping(path = "/api/v1/posts")
 public class PostController {
