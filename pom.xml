@@ -109,6 +109,12 @@
 			<artifactId>jackson-dataformat-xml</artifactId>
 		</dependency>
 
+		<dependency>
+			<groupId>io.rest-assured</groupId>
+			<artifactId>rest-assured</artifactId>
+			<scope>test</scope>
+		</dependency>
+
 	</dependencies>
 
 	<packaging>jar</packaging>

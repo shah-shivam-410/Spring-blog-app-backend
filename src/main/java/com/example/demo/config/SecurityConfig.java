@@ -55,8 +55,9 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
 		http
 			.csrf().disable()
 			.authorizeHttpRequests()
-			.antMatchers(PUBLIC_URLS).permitAll()
-			.antMatchers(HttpMethod.GET).permitAll()
+//			.antMatchers(PUBLIC_URLS).permitAll()
+//			.antMatchers(HttpMethod.GET).permitAll()
+			.antMatchers("*/**").permitAll()
 			.anyRequest().authenticated()
 			.and().exceptionHandling().authenticationEntryPoint(jwtAuthenticationEntryPoint)
 			.and().sessionManagement()
