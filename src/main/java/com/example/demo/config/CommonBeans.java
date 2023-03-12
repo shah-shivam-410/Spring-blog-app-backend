@@ -1,8 +1,6 @@
 package com.example.demo.config;
 
-import org.h2.server.web.WebServlet;
 import org.modelmapper.ModelMapper;
-import org.springframework.boot.web.servlet.ServletRegistrationBean;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
@@ -26,16 +24,6 @@ public class CommonBeans {
 	@Bean
 	public JwtTokenHelper jwtTokenHelper() {
 		return new JwtTokenHelper();
-	}
-	
-	@Configuration
-	public class WebConfiguration {
-	    @Bean
-	    ServletRegistrationBean h2servletRegistration(){
-	        ServletRegistrationBean registrationBean = new ServletRegistrationBean( new WebServlet());
-	        registrationBean.addUrlMappings("/console/*");
-	        return registrationBean;
-	    }
 	}
 	
 }

@@ -21,14 +21,14 @@ import com.example.demo.security.JwtAuthenticationFilter;
 @EnableWebSecurity
 public class SecurityConfig extends WebSecurityConfigurerAdapter {
 
-	private static final String[] PUBLIC_URLS = {
-			"/api/v1/auth/login",
-			"/v3/api-docs",
-			"/v2/api-docs",
-			"/swagger-resources/**",
-			"/swagger-ui/**",
-			"/webjars/**"
-	};
+//	private static final String[] PUBLIC_URLS = {
+//			"/api/v1/auth/login",
+//			"/v3/api-docs",
+//			"/v2/api-docs",
+//			"/swagger-resources/**",
+//			"/swagger-ui/**",
+//			"/webjars/**"
+//	};
 	
 	@Autowired
 	private UserDetailsService userDetailService;
