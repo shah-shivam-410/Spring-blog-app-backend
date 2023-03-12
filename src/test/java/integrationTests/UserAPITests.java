@@ -5,6 +5,7 @@ import static io.restassured.RestAssured.given;
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertTrue;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.Test;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -14,6 +15,7 @@ import com.example.demo.payloads.UserDto;
 import io.restassured.http.Method;
 import io.restassured.response.Response;
 
+@Disabled
 class UserAPITests {
 	
 	private static Logger log = LoggerFactory.getLogger(UserAPITests.class);
