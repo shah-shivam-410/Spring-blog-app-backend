@@ -2,7 +2,7 @@
 	"info": {
 		"_postman_id": "d246dc22-7690-415d-a629-00c30259ae43",
 		"name": "Blog-app-API",
-		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
 		"_exporter_id": "15783782"
 	},
 	"item": [
@@ -27,13 +27,9 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcXdlQGFvaS5jb20iLCJpYXQiOjE2NzE2NDA0NTYsImV4cCI6MTY3MTY3NjQ1Nn0.1p_NK-z6fcyDobVDnvgQd9EENod7ynKH2T2CO-45Dik",
-									"type": "string"
-								}
-							]
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcXdlQGFvaS5jb20iLCJpYXQiOjE2NzE2NDA0NTYsImV4cCI6MTY3MTY3NjQ1Nn0.1p_NK-z6fcyDobVDnvgQd9EENod7ynKH2T2CO-45Dik"
+							}
 						},
 						"method": "POST",
 						"header": [
@@ -53,16 +49,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/users/",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"users",
-								""
-							]
-						}
+						"url": "{{baseUri}}/users/"
 					},
 					"response": []
 				},
@@ -83,16 +70,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/users/6",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"users",
-								"6"
-							]
-						}
+						"url": "{{baseUri}}/users/6"
 					},
 					"response": []
 				},
@@ -126,16 +104,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/users/",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"users",
-								""
-							]
-						}
+						"url": "{{baseUri}}/users/"
 					},
 					"response": []
 				},
@@ -153,16 +122,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/users/2",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"users",
-								"2"
-							]
-						}
+						"url": "{{baseUri}}/users/2"
 					},
 					"response": []
 				},
@@ -171,26 +131,13 @@
 					"request": {
 						"auth": {
 							"type": "bearer",
-							"bearer": [
-								{
-									"key": "token",
-									"value": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcXdlQGFvaS5jb20iLCJpYXQiOjE2NzE2NDA0NTYsImV4cCI6MTY3MTY3NjQ1Nn0.1p_NK-z6fcyDobVDnvgQd9EENod7ynKH2T2CO-45Dik",
-									"type": "string"
-								}
-							]
+							"bearer": {
+								"token": "eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJhcXdlQGFvaS5jb20iLCJpYXQiOjE2NzE2NDA0NTYsImV4cCI6MTY3MTY3NjQ1Nn0.1p_NK-z6fcyDobVDnvgQd9EENod7ynKH2T2CO-45Dik"
+							}
 						},
 						"method": "DELETE",
 						"header": [],
-						"url": {
-							"raw": "{{baseUri}}/users/4",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"users",
-								"4"
-							]
-						}
+						"url": "{{baseUri}}/users/4"
 					},
 					"response": []
 				}
@@ -213,16 +160,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/categories/",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"categories",
-								""
-							]
-						}
+						"url": "{{baseUri}}/categories/"
 					},
 					"response": []
 				},
@@ -243,16 +181,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/categories/1",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"categories",
-								"1"
-							]
-						}
+						"url": "{{baseUri}}/categories/1"
 					},
 					"response": []
 				},
@@ -273,16 +202,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/categories/",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"categories",
-								""
-							]
-						}
+						"url": "{{baseUri}}/categories/"
 					},
 					"response": []
 				},
@@ -300,16 +220,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/categories/3",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"categories",
-								"3"
-							]
-						}
+						"url": "{{baseUri}}/categories/3"
 					},
 					"response": []
 				},
@@ -327,16 +238,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/categories/4",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"categories",
-								"4"
-							]
-						}
+						"url": "{{baseUri}}/categories/4"
 					},
 					"response": []
 				}
@@ -362,19 +264,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/user/4/category/3",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"user",
-								"4",
-								"category",
-								"3"
-							]
-						}
+						"url": "{{baseUri}}/posts/user/4/category/3"
 					},
 					"response": []
 				},
@@ -443,16 +333,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/11",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"11"
-							]
-						}
+						"url": "{{baseUri}}/posts/11"
 					},
 					"response": []
 				},
@@ -473,17 +354,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/user/3",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"user",
-								"3"
-							]
-						}
+						"url": "{{baseUri}}/posts/user/3"
 					},
 					"response": []
 				},
@@ -504,17 +375,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/category/3",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"category",
-								"3"
-							]
-						}
+						"url": "{{baseUri}}/posts/category/3"
 					},
 					"response": []
 				},
@@ -532,16 +393,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/2",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"2"
-							]
-						}
+						"url": "{{baseUri}}/posts/2"
 					},
 					"response": []
 				},
@@ -562,17 +414,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/posts/search/6",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"posts",
-								"search",
-								"6"
-							]
-						}
+						"url": "{{baseUri}}/posts/search/6"
 					},
 					"response": []
 				}
@@ -595,19 +437,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/comments/user/2/post/5",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"comments",
-								"user",
-								"2",
-								"post",
-								"5"
-							]
-						}
+						"url": "{{baseUri}}/comments/user/2/post/5"
 					},
 					"response": []
 				},
@@ -625,16 +455,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/comments/1",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"comments",
-								"1"
-							]
-						}
+						"url": "{{baseUri}}/comments/1"
 					},
 					"response": []
 				}
@@ -648,17 +469,7 @@
 					"request": {
 						"method": "GET",
 						"header": [],
-						"url": {
-							"raw": "http://localhost:8081/logout",
-							"protocol": "http",
-							"host": [
-								"localhost"
-							],
-							"port": "8081",
-							"path": [
-								"logout"
-							]
-						}
+						"url": "http://localhost:8081/logout"
 					},
 					"response": []
 				},
@@ -679,16 +490,7 @@
 								}
 							}
 						},
-						"url": {
-							"raw": "{{baseUri}}/auth/login",
-							"host": [
-								"{{baseUri}}"
-							],
-							"path": [
-								"auth",
-								"login"
-							]
-						}
+						"url": "{{baseUri}}/auth/login"
 					},
 					"response": []
 				}
